@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Edit Patient{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Edit Patient</h2>
+    <a href="{{ url_for('patient.list') }}" class="btn btn-secondary">Back</a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{ patient.name }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="age" class="form-label">Age</label>
+                <input type="number" class="form-control" id="age" name="age" value="{{ patient.age }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="gender" class="form-label">Gender</label>
+                <select class="form-select" id="gender" name="gender" required>
+                    <option value="Male" {% if patient.gender == 'Male' %}selected{% endif %}>Male</option>
+                    <option value="Female" {% if patient.gender == 'Female' %}selected{% endif %}>Female</option>
+                    <option value="Other" {% if patient.gender == 'Other' %}selected{% endif %}>Other</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" value="{{ patient.phone }}" required>
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <textarea class="form-control" id="address" name="address" rows="2">{{ patient.address }}</textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Patient</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.
+
+<environment_details>
+# Visual Studio Code Visible Files
+hospital_management/templates/patients/edit.html
+
+# Visual Studio Code Open Tabs
+hospital_management/models/__init__.py
+hospital_management/models/database.py
+hospital_management/models/user.py
+hospital_management/models/patient.py
+hospital_management/models/doctor.py
+hospital_management/models/appointment.py
+hospital_management/models/billing.py
+hospital_management/utils/__init__.py
+hospital_management/services/__init__.py
+hospital_management/services/patient_service.py
+hospital_management/services/doctor_service.py
+hospital_management/services/billing_service.py
+hospital_management/controllers/dashboard_controller.py
+hospital_management/templates/base.html
+hospital_management/app.py
+hospital_management/services/auth_service.py
+hospital_management/services/appointment_service.py
+hospital_management/controllers/__init__.py
+hospital_management/controllers/auth_controller.py
+hospital_management/templates/auth/login.html
+hospital_management/templates/auth/register.html
+hospital_management/templates/dashboard.html
+hospital_management/templates/patients/list.html
+hospital_management/templates/patients/edit.html
+
+# Current Time
+8/19/2026, 11:01:09 AM (Asia/Calcutta, UTC+5.5:00)
+
+# Context Window Usage
+70,120 / 1,048.576K tokens used (7%)
+
+# Current Mode
+ACT MODE
+</environment_details>

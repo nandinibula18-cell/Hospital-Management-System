@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+
+{% block title %}Doctors{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Doctors</h2>
+    <a href="{{ url_for('doctor.add') }}" class="btn btn-success">Add Doctor</a>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Specialty</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for doctor in doctors %}
+        <tr>
+            <td>{{ doctor.id }}</td>
+            <td>{{ doctor.name }}</td>
+            <td>{{ doctor.specialty }}</td>
+            <td>{{ doctor.phone }}</td>
+            <td>{{ doctor.email }}</td>
+            <td>
+                <a href="{{ url_for('doctor.edit', doctor_id=doctor.id) }}" class="btn btn-sm btn-warning">Edit</a>
+                <form method="POST" action="{{ url_for('doctor.delete', doctor_id=doctor.id) }}" style="display:inline;">
+                    <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Delete this doctor?');">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}
+
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version for accuracy.
+
+<environment_details>
+# Visual Studio Code Visible Files
+hospital_management/templates/doctors/list.html
+
+# Visual Studio Code Open Tabs
+hospital_management/config.py
+hospital_management/models/__init__.py
+hospital_management/models/database.py
+hospital_management/models/user.py
+hospital_management/models/patient.py
+hospital_management/models/doctor.py
+hospital_management/models/appointment.py
+hospital_management/models/billing.py
+hospital_management/utils/__init__.py
+hospital_management/services/__init__.py
+hospital_management/services/patient_service.py
+hospital_management/services/doctor_service.py
+hospital_management/services/billing_service.py
+hospital_management/controllers/dashboard_controller.py
+hospital_management/templates/base.html
+hospital_management/app.py
+hospital_management/services/auth_service.py
+hospital_management/services/appointment_service.py
+hospital_management/controllers/__init__.py
+hospital_management/controllers/auth_controller.py
+hospital_management/templates/auth/login.html
+hospital_management/templates/auth/register.html
+hospital_management/templates/dashboard.html
+hospital_management/templates/patients/list.html
+hospital_management/templates/patients/add.html
+hospital_management/templates/patients/edit.html
+hospital_management/templates/appointments/list.html
+hospital_management/templates/appointments/book.html
+hospital_management/templates/appointments/edit.html
+hospital_management/templates/doctors/list.html
+
+# Current Time
+8/19/2026, 11:02:27 AM (Asia/Calcutta, UTC+5.5:00)
+
+# Context Window Usage
+76,468 / 1,048.576K tokens used (7%)
+
+# Current Mode
+ACT MODE
+</environment_details>

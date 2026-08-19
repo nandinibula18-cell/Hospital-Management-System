@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}Generate Invoice{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2>Generate Invoice</h2>
+    <a href="{{ url_for('billing.list') }}" class="btn btn-secondary">Back</a>
+</div>
+
+<div class="card">
+    <div class="card-body">
+        <form method="POST">
+            <div class="mb-3">
+                <label for="appointment" class="form-label">Appointment</label>
+                <select class="form-select" id="appointment" name="appointment_id" required>
+                    {% for appointment in appointments %}
+                    <option value="{{ appointment.id }}">#{{ appointment.id }} - {{ appointment.patient_name }} with {{ appointment.doctor_name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="amount" class="form-label">Amount</label>
+                <input type="number" step="0.01" class="form-control" id="amount" name="amount" required>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" name="description" rows="2"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate Invoice</button>
+        </form>
+    </div>
+</div>
+{% endblock content %}

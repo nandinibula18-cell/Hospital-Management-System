@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-5">
+        <div class="card shadow-sm mt-5">
+            <div class="card-body p-4">
+                <h3 class="text-center mb-4">Register</h3>
+                <form method="POST">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="role" class="form-label">Role</label>
+                        <select class="form-select" id="role" name="role">
+                            <option value="patient" selected>Patient</option>
+                            <option value="doctor">Doctor</option>
+                            <option value="admin">Admin</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Register</button>
+                </form>
+                <p class="text-center mt-3">
+                    Already have an account? <a href="{{ url_for('auth.login') }}">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+</final_file_content>
+
+IMPORTANT: For any future changes to this file, use the final_file_content shown above as your reference. This content reflects the current state of the file, including any auto-formatting (e.g., if you used single quotes but the formatter converted them to double quotes). Always base your SEARCH/REPLACE operations on this final version to ensure accuracy.
+
+ <environment_details>
+# Visual Studio Code Visible Files
+hospital_management/templates/auth/register.html
+
+# Visual Studio Code Open Tabs
+hospital_management/config.py
+hospital_management/models/__init__.py
+hospital_management/models/database.py
+hospital_management/models/user.py
+hospital_management/models/patient.py
+hospital_management/models/doctor.py
+hospital_management/models/appointment.py
+hospital_management/models/billing.py
+hospital_management/utils/__init__.py
+hospital_management/services/__init__.py
+hospital_management/services/patient_service.py
+hospital_management/services/doctor_service.py
+hospital_management/services/billing_service.py
+hospital_management/controllers/dashboard_controller.py
+hospital_management/templates/base.html
+hospital_management/app.py
+hospital_management/services/auth_service.py
+hospital_management/services/appointment_service.py
+hospital_management/controllers/__init__.py
+hospital_management/controllers/auth_controller.py
+hospital_management/templates/auth/login.html
+hospital_management/templates/auth/register.html
+
+# Current Time
+8/19/2026, 10:59:00 AM (Asia/Calcutta, UTC+5.5:00)
+
+# Context Window Usage
+60,812 / 1,048.576K tokens used (6%)
+
+# Current Mode
+ACT MODE
+</environment_details>
